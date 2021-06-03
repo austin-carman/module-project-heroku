@@ -13,6 +13,12 @@ server.use((req, res) => {
     })
 })
 
+server.use('/api', (req, res) => {
+    res.json({
+        message: 'Woooo! You`ve done your first Heroku deployment'
+    })
+})
+
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
