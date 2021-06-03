@@ -9,21 +9,22 @@ server.use(cors());
 
 server.use('/', (req,res) => {
     res.send(
-        `<h1>Hello, Welcome To My Deployed Page</h1>
-        <h2>     .</h2>
-        <h3>    . .</h3>
-        <h4>   . . .</h4>
-        <h5>  . . . .</h5>
-        <h6> . . . . .</h6>
-        <h7>. . . . . .</h7>
-        <p>     ||</p>
-        <p>     ||</p>
+        `<h1>Marry Christmas!</h1>
+        <pre>
+                .
+               .0.
+              ..0..
+             .0...0.
+            .0..0..0.
+               ||
+        </pre>
+        <p>(Try the /api endpoint)</p>
     `)
 })
 
 server.use('/api', (req, res) => {
     res.json({
-        message: "Woooo! You've done your first Heroku deployment"
+        message: "Santa's watching you!"
     })
 })
 
