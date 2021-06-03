@@ -7,6 +7,10 @@ server.use(express.json());
 
 server.use(cors());
 
+server.use('/', (req,res) => {
+    res.send(`<h1>Hello There</h1>`)
+})
+
 server.use('/api', (req, res) => {
     res.json({
         message: "Woooo! You've done your first Heroku deployment"
