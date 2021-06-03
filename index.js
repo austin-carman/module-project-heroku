@@ -7,15 +7,15 @@ server.use(express.json());
 
 server.use(cors());
 
-server.use((req, res) => {
-    res.status(404).json({
-        message: 'not found'
+server.use('/api', (req, res) => {
+    res.json({
+        message: "Woooo! You've done your first Heroku deployment"
     })
 })
 
-server.use('/api', (req, res) => {
-    res.json({
-        message: 'Woooo! You`ve done your first Heroku deployment'
+server.use((req, res) => {
+    res.status(404).json({
+        message: 'not found'
     })
 })
 
