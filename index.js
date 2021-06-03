@@ -7,13 +7,7 @@ server.use(express.json());
 
 server.use(cors());
 
-server.use('/api', (req, res) => {
-    res.json({
-        message: "Santa's watching you!"
-    })
-})
-
-server.use('/', (req,res) => {
+server.get('/', (req,res) => {
     res.send(
         `<h1>Marry Christmas!</h1>
         <pre>
@@ -28,7 +22,13 @@ server.use('/', (req,res) => {
     `)
 })
 
-server.use((req, res) => {
+server.get('/api', (req, res) => {
+    res.json({
+        message: "Santa's watching you!"
+    })
+})
+
+server.use((req, res) => { //.use is for global middleware
     res.status(404).json({
         message: 'not found'
     })
