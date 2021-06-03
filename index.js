@@ -7,6 +7,12 @@ server.use(express.json());
 
 server.use(cors());
 
+server.use('/api', (req, res) => {
+    res.json({
+        message: "Santa's watching you!"
+    })
+})
+
 server.use('/', (req,res) => {
     res.send(
         `<h1>Marry Christmas!</h1>
@@ -20,12 +26,6 @@ server.use('/', (req,res) => {
         </pre>
         <p>(Try the /api endpoint)</p>
     `)
-})
-
-server.use('/api', (req, res) => {
-    res.json({
-        message: "Santa's watching you!"
-    })
 })
 
 server.use((req, res) => {
